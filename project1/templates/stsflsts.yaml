@@ -1,6 +1,21 @@
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-svc
+  labels:
+    app: {{ .Values.metadata.app }}
+spec:
+  type: LoadBalancer
+  LoadBalancer: None
+  selector:
+    app:  {{ .Values.selector.app }}
+  ports:
+  - port: {{ .Values.port }}
+
+---
 apiVersion: apps/v1
-Kind: StatefulSet
+kind: StatefulSet
 metadata:
   name: {{ .Release.Name }}-spc
   labels:

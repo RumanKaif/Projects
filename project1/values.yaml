@@ -1,3 +1,10 @@
+---
+metadata:
+  app: 
+selector:
+  app: 
+port:
+
 --- #Statefulset-Manifests
 metadata:
   labels: spc
