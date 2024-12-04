@@ -1,0 +1,39 @@
+--- #Statefulset-Manifests
+metadata:
+  labels: spc
+minReadySeconds: 5
+replicas: 2
+matchLabels:
+  labels: spc
+template:
+  labels: spc
+containers:
+  name: spc
+  image: 
+ports:
+  containerPort:
+resources:
+  limits:
+    memory:
+    cpu:  
+  requests:
+    memory:
+    cpu:
+volumes:
+  name:
+  mountPath:
+serviceName:
+volumeClaimTemplates:
+  name:
+  accessModes: -ReadWriteOnce
+  storageClassName:
+  storage: 
+  
+    
+  
+  
+
+
+
+
+
