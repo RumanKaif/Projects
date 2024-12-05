@@ -1,4 +1,4 @@
----
+--- #Service-Manifests
 metadata:
   app: 
 selector:
@@ -35,6 +35,57 @@ volumeClaimTemplates:
   accessModes: -ReadWriteOnce
   storageClassName:
   storage: 
+
+--- #books-db-svc
+selector:
+  app: 
+
+--- #books-db-stsflst
+replicas:
+selector:
+  app: 
+template:
+  app:
+containers:
+  name:
+  image:
+  tag:
+resources:
+  requests:
+  limits:
+  
+--- #user-db-svc
+selector:
+  app: 
+
+
+--- #user-db-stsflst
+replicas:
+selector:
+  app: 
+template:
+  app:
+containers:
+  name:
+  image:
+  tag:
+resources:
+  requests:
+  limits:
+
+--- #bksdb-sec
+data:
+  MYSQL_ROOT_PASSWORD: rootpassword 
+  MYSQL_USER: dXNlcg==
+  MYSQL_PASSWORD: cGFzc3dvcmQK
+  MYSQL_DB: YmtzZGI=
+
+--- #usrdb-sec
+data:
+  MYSQL_ROOT_PASSWORD: rootpassword  
+  MYSQL_USER: dXNlcg==
+  MYSQL_PASSWORD: cGFzc3dvcmQK
+  MYSQL_DB: dXNyZGI=
   
     
   
