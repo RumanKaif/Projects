@@ -48,8 +48,8 @@ spec:
             - name: MYSQL_DB
               value: bksdb
           resources:
-            requests: {{ .Values.resources.requests }}
-            limits: {{ .Values.resources.limits }}
+            requests: {{ .Values.resources.requests | toYaml | nindent 14 }}
+            limits: {{ .Values.resources.limits | toYaml | nindent 14 }}
           volumeMounts:
             - name: volume 
               mountPath: /var/lib/mysql
